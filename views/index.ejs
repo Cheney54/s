@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/base.css">
+</head>
+<body>
+<table class="table table-bordered">
+    <tr>
+        <td>
+            姓名：
+        </td>
+        <td>
+            性别：
+        </td>
+        <td>
+            年龄：
+        </td>
+        <td>
+           操作
+        </td>
+    </tr>
+    <% for(var i = 0;i < result.length;i++){ %>
+    <tr>
+        <td>
+            <%= result[i].username %>
+        </td>
+        <td>
+            <%= result[i].sex %>
+        </td>
+        <td>
+            <%= result[i].age %>
+        </td>
+        <td>
+            <a class="btn btn-default" href="/jia?id=<%=i%>" role="button">编辑</a>
+            <a class="btn btn-default" href="/del?id=<%=i%>" role="button">删除</a>
+        </td>
+    </tr>
+    <% } %>
+</table>
+<a href="/add" class="add">+</a>
+</body>
+</html>

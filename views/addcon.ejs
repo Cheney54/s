@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div class="big">
+    <div class="s">
+        <sapn>3</sapn>秒跳转到下一页面
+    </div>
+    <div class="x">
+        如不行请点击 <a href="/">这里</a>
+    </div>
+</div>
+</body>
+<script>
+    var span=document.querySelector("span")
+    var n=3
+    setInterval(function () {
+        n--;
+        span.innerHTML=n;
+        if(span.innerHTML<=0){
+           window.location.href="/"
+        }else {
+            span.innerHTML=n;
+        }
+    },1000)
+
+</script>
+</html>
