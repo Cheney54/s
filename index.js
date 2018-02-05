@@ -29,7 +29,7 @@ var objArr = [];
 
 //添加数据
 app.get("/addCon", function (req, res) {
-    res.render("addcon.ejs")
+    res.render("addcon.ejs");
     var username = req.query.username;
     var sex = req.query.sex;
     var age = req.query.age;
@@ -47,10 +47,10 @@ app.get("/del", function (req, res) {
         if (id != index) {
             return value
         }
-    })
+    });
     fs.writeFile("data.json", JSON.stringify(objArr));
     res.redirect("/");
-})
+});
 
 
 //响应编辑的页面
@@ -62,7 +62,7 @@ app.get("/jia", function (req, res) {
 
 //修改内容
 app.get("/qwe", function (req, res) {
-    var id = req.query.id
+    var id = req.query.id;
     var name = req.query.username;
     var sex = req.query.sex;
     var age = req.query.age;
@@ -73,10 +73,10 @@ app.get("/qwe", function (req, res) {
             value.age = age;
         }
         return value
-    })
+    });
     fs.writeFile("data.json", JSON.stringify(objArr));
     res.render("addcon.ejs");
-})
+});
 var server = app.listen(6565, function () {
     var host = server.address().address;
     var port = server.address().port;
